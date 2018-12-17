@@ -1,4 +1,5 @@
 <?php
+
 //setting the variables for connection
 $host="localhost";
 $db="prasea";

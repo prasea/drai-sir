@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['login']))
 {
 	$uname=$_POST['name'];
@@ -14,6 +15,9 @@ if(isset($_POST['login']))
 	//if success got to dashboard or stay in this form
 	if($rec==1)
 	{
+		$_SESSION['sid']=md5(rand(1,9999));
+		$_SESSION['username']=$uname;//for welcoming user
+		$_SESSION['logintime']=time();
 		header('Location: dashboard.php');
 	}
 	else
@@ -39,4 +43,4 @@ if(isset($_POST['login']))
 	</form>
 
 </body>
-</html>
+</html>								
